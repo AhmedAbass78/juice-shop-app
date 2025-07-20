@@ -51,6 +51,6 @@ sudo systemctl enable --now kubelet
 ```
 6. Use kubeadm join command from master node
 ```
-kubeadm join 192.168.88.136:6443 --token 3u7i84.m1c4iawvsv6d6aiz \
+kubeadm join X.X.X.X:6443 --token 3u7i84.m1c4iawvsv6d6aiz \
         --discovery-token-ca-cert-hash sha256:1263524ee5130968feea94fde855ecb360d5acce557a669f6757ed6d1bf538c1
 ```
