@@ -70,8 +70,8 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
 
 Then you can join any number of worker nodes by running the following on each as root:
 ```
-kubeadm join X.X.X.X:6443 --token 3u7i84.m1c4iawvsv6d6aiz \
-        --discovery-token-ca-cert-hash sha256:1263524ee5130968feea94fde855ecb360d5acce557a669f6757ed6d1bf538c1  
+kubeadm join 10.9.16.195:6443 --token ac8bkj.8k37qy8gciirz8od \
+        --discovery-token-ca-cert-hash sha256:828af2929f4a8649cb0f634845f09a51b237f110405b27d9d7b0a33bd9c89265
 ```
 8. Apply flannel network plugin
 ```
