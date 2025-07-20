@@ -1,4 +1,11 @@
-```
+# We can restrict the Kubenetes API access via:
+
+1- Editing the kube-apiserver.yaml file
+
+vim /etc/kubernetes/manifests/kube-apiserver.yaml
+
+
+
 1. Enable firewalld:
    systemctl enable --now firewalld
 
@@ -13,4 +20,4 @@
 
 5. Reload rules:
    firewall-cmd --reload
-``` 
+ 
