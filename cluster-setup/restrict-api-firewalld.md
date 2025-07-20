@@ -1,23 +1,28 @@
 # We can restrict the Kubenetes API access via:
 
 1- Editing the kube-apiserver.yaml file
-
+```
 vim /etc/kubernetes/manifests/kube-apiserver.yaml
+```
+add the below flag:
+- --allow-address=<YOUR_ALLOWED_IP>
 
+# OR
 
+2- Firewall Service
 
-1. Enable firewalld:
+- Enable firewalld:
    systemctl enable --now firewalld
 
-2. Remove public access to API:
+- Remove public access to API:
    firewall-cmd --permanent --remove-port=6443/tcp
 
-3. Allow specific IP:
+- Allow specific IP:
    firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="YOUR.IP.ADD.RESS" port protocol="tcp" port="6443" accept'
 
-4. Allow internal cluster subnet:
+- Allow internal cluster subnet:
    firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="10.0.0.0/8" port protocol="tcp" port="6443" accept'
 
-5. Reload rules:
+- Reload rules:
    firewall-cmd --reload
  
